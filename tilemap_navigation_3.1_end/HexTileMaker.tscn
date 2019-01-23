@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://hexagonTerrain_sheet.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( -60, -35, 0, -70, 60, -35, 60, 34, 0, 69, -60, 34 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+outlines = [ PoolVector2Array( -60, -35, 0, -70, 60, -35, 60, 34, 0, 69, -60, 34 ) ]
+
+[node name="Hex_TileMaker" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 60, 70 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 610, 142, 120, 140 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Sprite"]
+navpoly = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 207, 70 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 488, 852, 120, 140 )
+__meta__ = {
+"_edit_group_": true
+}
+
